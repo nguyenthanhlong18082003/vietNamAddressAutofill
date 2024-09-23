@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_vietnam_province,access_vietnam_province,model_vietnam_province,base.group_user,1,1,1,1
+access_vietnam_district,access_vietnam_district,model_vietnam_district,base.group_user,1,1,1,1
+access_vietnam_ward,access_vietnam_ward,model_vietnam_ward,base.group_user,1,1,1,1
+access_import_vietnam_address,access_import_vietnam_address,model_import_vietnam_address,base.group_user,1,1,1,1
+access_vietnam_address_overview,access_vietnam_address_overview,model_vietnam_address_overview,base.group_user,1,1,1,1
+
+user_public_vietnam_province,User Public,model_vietnam_province,base.group_public,1,0,0,0

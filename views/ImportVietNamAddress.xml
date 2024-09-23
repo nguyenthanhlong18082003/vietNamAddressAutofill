@@ -1,0 +1,70 @@
+<odoo>
+    <record id="view_import_vietnam_address_form" model="ir.ui.view">
+        <field name="name">import.vietnam.address.form</field>
+        <field name="model">import.vietnam.address</field>
+        <field name="arch" type="xml">
+            <form string="Import Địa chỉ Việt Nam">
+                <p>Vui lòng tải lên file Excel (.xls hoặc .xlsx) chứa dữ liệu địa chỉ Việt Nam.</p>
+                <group>
+                    <field name="file" widget="binary" filename="filename" accept=".xls,.xlsx" />
+                    <field name="filename" invisible="1" />
+                </group>
+                <footer>
+                    <button name="import_address" string="Import" type="object" class="btn-primary"
+                        icon="fa-download" />
+                    <button string="Hủy" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_vietnam_address_overview_tree" model="ir.ui.view">
+        <field name="name">vietnam.address.overview.tree</field>
+        <field name="model">vietnam.address.overview</field>
+        <field eval="8" name="priority" />
+        <field name="arch" type="xml">
+            <tree>
+                <field name="province_name" />
+                <field name="province_code" />
+                <field name="district_name" />
+                <field name="district_code" />
+                <field name="ward_name" />
+                <field name="ward_code" />
+                <field name="level" />
+                <field name="english_name" />
+            </tree>
+        </field>
+    </record>
+ 
+    <record id="action_vietnam_address_overview" model="ir.actions.act_window">
+        <field name="name">Tổng quan Địa chỉ Việt Nam</field>
+        <field name="res_model">vietnam.address.overview</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="vietnam_address_overview_search" model="ir.ui.view">
+        <field name="name">vietnam.address.overview.search</field>
+        <field name="model">vietnam.address.overview</field>
+        <field name="arch" type="xml">
+            <search string="Tìm kiếm">
+                <field name="province_name"/>
+                <field name="district_name"/>
+                <field name="ward_name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_refresh_vietnam_address_overview_form" model="ir.ui.view">
+        <field name="name">refresh.vietnam.address.overview.form</field>
+        <field name="model">vietnam.address.overview</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="refresh_data" string="Làm mới dữ liệu" type="object"
+                        class="oe_highlight" />
+                </header>
+                <p>Nhấn nút "Làm mới dữ liệu" để cập nhật bảng tổng quan với dữ liệu mới nhất.</p>
+            </form>
+        </field>
+    </record>
+</odoo>
